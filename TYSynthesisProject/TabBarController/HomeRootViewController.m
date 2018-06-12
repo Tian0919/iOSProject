@@ -6,7 +6,7 @@
 //  Copyright © 2018年 TianY. All rights reserved.
 //
 #import "HomeRootViewController.h"
-
+#import "BaseViewController.h"
 static NSString *kCellIdentifier = @"HomeCell";
 @interface HomeRootViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *homeTabView;
@@ -37,6 +37,12 @@ static NSString *kCellIdentifier = @"HomeCell";
     cell.textLabel.text = _homeDataArr[indexPath.row];
     
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    BaseViewController *baseVC = [BaseViewController new];
+    baseVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:baseVC animated:YES];
 }
 
 @end
