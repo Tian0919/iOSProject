@@ -97,24 +97,19 @@
 }
 - (void)changeTransform{
 
-    [UIView beginAnimations:@"imageViewTranslation" context:nil];
-    [UIView setAnimationDuration:2.0];
-    [UIView setAnimationDelegate:self];
-//    [UIView setAnimationWillStartSelector:@selector(startAnimation)];
-//    [UIView setAnimationDidStopSelector:@selector(stopAnimation)];
-    [UIView setAnimationRepeatCount:1.0];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-    [UIView setAnimationRepeatAutoreverses:YES];
-    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.animationView cache:YES];
-    if (++_count % 2 ==0) {
-        self.animationView.backgroundColor = [UIColor redColor];
-    }else{
-        self.animationView.backgroundColor = [UIColor greenColor];
-    }
-    [UIView commitAnimations];
-    
+
    
-    
+    [UIView transitionWithView:self.animationView duration:2.0 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+        [UIView setAnimationRepeatCount:1];
+        [UIView setAnimationRepeatAutoreverses:YES];
+        if (++self->_count % 2 ==0) {
+            self.animationView.backgroundColor = [UIColor redColor];
+        }else{
+            self.animationView.backgroundColor = [UIColor greenColor];
+        }
+    } completion:^(BOOL finished) {
+        
+    }];
     
 }
 - (void)changeAlpha{
