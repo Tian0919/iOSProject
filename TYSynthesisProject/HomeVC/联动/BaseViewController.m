@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+//    self.ShowUnderLine = YES;
+    self.selectedColor = [UIColor blueColor];
+    self.selectedIndex = 5;
     ExampleTableViewController *vc1 = [ExampleTableViewController new];
     vc1.title = @"推荐";
     

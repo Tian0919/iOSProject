@@ -18,9 +18,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-  
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(refreshDate) name:TYComponentClickOrScrollerViewDidfinishLoadView object:self];
+    
 }
-
+#pragma mark
+- (void)refreshDate{
+    NSLog(@"******收到通知&&&&&&&&&&");
+}
 
 #pragma mark - Table view data source
 
@@ -31,7 +36,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 10;
+    return 70;
 }
 
 

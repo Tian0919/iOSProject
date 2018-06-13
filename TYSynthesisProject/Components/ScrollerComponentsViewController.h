@@ -10,4 +10,24 @@
 
 @interface ScrollerComponentsViewController : UIViewController
 
+/**
+ 选中字体颜色（默认红色）
+ */
+@property (nonatomic, strong) UIColor *selectedColor;
+
+/**
+ 正常字体颜色(默认黑色)
+ */
+@property (nonatomic, strong) UIColor *normalColor;
+
+/**
+ 是否添加下划线(默认NO)
+ */
+@property (nonatomic, getter=isShowUnderLine) BOOL ShowUnderLine;
+
+/**
+ 选中标题Index（默认0）第一个
+ */
+@property (nonatomic, assign) NSInteger selectedIndex;
+
 @end

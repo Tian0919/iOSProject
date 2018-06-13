@@ -74,7 +74,7 @@
         <!--TYProject-->
         <scene sceneID="oma-5k-81u">
             <objects>
-                <tabBarController id="knT-e5-3Ms" customClass="TYRootViewController" sceneMemberID="viewController">
+                <tabBarController hidesBottomBarWhenPushed="YES" id="knT-e5-3Ms" customClass="TYRootViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="TYProject" largeTitleDisplayMode="never" id="KjQ-jX-zxx"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DGv-DO-JZ6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -111,7 +111,7 @@
         <!--暂定-->
         <scene sceneID="ddC-mC-qA6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hvZ-Ar-1aO" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hvZ-Ar-1aO" customClass="TYNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="暂定" image="other" selectedImage="other_selec" id="fGJ-tN-dmp">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-5"/>
                     </tabBarItem>
@@ -129,7 +129,7 @@
             </objects>
             <point key="canvasLocation" x="271" y="979"/>
         </scene>
-        <!--Animation Root View Controller-->
+        <!--动画-->
         <scene sceneID="yJD-rS-w5C">
             <objects>
                 <viewController id="boA-jC-we9" customClass="AnimationRootViewController" sceneMemberID="viewController">
@@ -139,16 +139,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CMb-bd-ijf"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XHZ-kb-qLU"/>
+                    <navigationItem key="navigationItem" title="动画" id="XHZ-kb-qLU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBK-G5-LAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1150" y="92"/>
+            <point key="canvasLocation" x="1149.5999999999999" y="91.304347826086968"/>
         </scene>
         <!--动画-->
         <scene sceneID="Mxo-hp-cCm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gcc-4D-d2z" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gcc-4D-d2z" customClass="TYNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="动画" image="animation" selectedImage="animation_selec" id="CgN-ij-XYP">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-5"/>
                     </tabBarItem>
@@ -169,7 +169,7 @@
         <!--Home-->
         <scene sceneID="7wB-ka-UCU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uPF-q5-15p" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uPF-q5-15p" customClass="TYNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home_s" id="pmu-tX-ZCN">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-5"/>
                     </tabBarItem>
@@ -190,7 +190,7 @@
         <!--多媒体-->
         <scene sceneID="A7A-Sb-cjt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0qe-DK-0Yn" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0qe-DK-0Yn" customClass="TYNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="多媒体" image="media" selectedImage="media_selec" id="9e8-t2-Sbe">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-5"/>
                     </tabBarItem>

@@ -21,6 +21,9 @@
 		0768C4C020CFAC5600A590CB /* ScrollerComponentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768C4BF20CFAC5600A590CB /* ScrollerComponentsViewController.m */; };
 		0768C4C620CFB4C800A590CB /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768C4C520CFB4C800A590CB /* BaseViewController.m */; };
 		0768C4C920CFB4D600A590CB /* ExampleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768C4C820CFB4D600A590CB /* ExampleTableViewController.m */; };
+		0770656820D0AEB1007CEDB2 /* TYNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0770656720D0AEB1007CEDB2 /* TYNetManager.m */; };
+		0770659A20D10190007CEDB2 /* UIViewAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0770659920D10190007CEDB2 /* UIViewAnimationViewController.m */; };
+		0770659D20D10403007CEDB2 /* TYNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0770659C20D10403007CEDB2 /* TYNavigationViewController.m */; };
 		A34163987EBF185BBF4626E7 /* libPods-TYSynthesisProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 682F056BBD2465903AAF438A /* libPods-TYSynthesisProject.a */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +55,12 @@
 		0768C4C520CFB4C800A590CB /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		0768C4C720CFB4D600A590CB /* ExampleTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExampleTableViewController.h; sourceTree = "<group>"; };
 		0768C4C820CFB4D600A590CB /* ExampleTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleTableViewController.m; sourceTree = "<group>"; };
+		0770656620D0AEB1007CEDB2 /* TYNetManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNetManager.h; sourceTree = "<group>"; };
+		0770656720D0AEB1007CEDB2 /* TYNetManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNetManager.m; sourceTree = "<group>"; };
+		0770659820D10190007CEDB2 /* UIViewAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewAnimationViewController.h; sourceTree = "<group>"; };
+		0770659920D10190007CEDB2 /* UIViewAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewAnimationViewController.m; sourceTree = "<group>"; };
+		0770659B20D10403007CEDB2 /* TYNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYNavigationViewController.h; sourceTree = "<group>"; };
+		0770659C20D10403007CEDB2 /* TYNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYNavigationViewController.m; sourceTree = "<group>"; };
 		27B021583B7C5C6700937B59 /* Pods-TYSynthesisProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYSynthesisProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TYSynthesisProject/Pods-TYSynthesisProject.debug.xcconfig"; sourceTree = "<group>"; };
 		682F056BBD2465903AAF438A /* libPods-TYSynthesisProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TYSynthesisProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		871F1EE4234A63B11083E55C /* Pods-TYSynthesisProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYSynthesisProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TYSynthesisProject/Pods-TYSynthesisProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,6 +103,7 @@
 				0768C48B20CF52EA00A590CB /* AppDelegate.m */,
 				0768C4B520CF916D00A590CB /* TabBarController */,
 				0768C4C220CFB4A100A590CB /* HomeVC */,
+				0770659720D10175007CEDB2 /* UIView动画 */,
 				0768C4A520CF53C500A590CB /* Tool */,
 				0768C4BD20CFAC0400A590CB /* Components */,
 				0768C4A420CF538800A590CB /* Category */,
@@ -127,6 +137,10 @@
 			children = (
 				0768C4A620CF53D500A590CB /* FPSLabel.h */,
 				0768C4A720CF53D500A590CB /* FPSLabel.m */,
+				0770656620D0AEB1007CEDB2 /* TYNetManager.h */,
+				0770656720D0AEB1007CEDB2 /* TYNetManager.m */,
+				0770659B20D10403007CEDB2 /* TYNavigationViewController.h */,
+				0770659C20D10403007CEDB2 /* TYNavigationViewController.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -174,6 +188,15 @@
 				0768C4C820CFB4D600A590CB /* ExampleTableViewController.m */,
 			);
 			path = "联动";
+			sourceTree = "<group>";
+		};
+		0770659720D10175007CEDB2 /* UIView动画 */ = {
+			isa = PBXGroup;
+			children = (
+				0770659820D10190007CEDB2 /* UIViewAnimationViewController.h */,
+				0770659920D10190007CEDB2 /* UIViewAnimationViewController.m */,
+			);
+			path = "UIView动画";
 			sourceTree = "<group>";
 		};
 		0F6EAFC7C8B6FB2128005F79 /* Pods */ = {
@@ -268,9 +291,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TYSynthesisProject/Pods-TYSynthesisProject-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -317,14 +343,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0770656820D0AEB1007CEDB2 /* TYNetManager.m in Sources */,
 				0768C4C920CFB4D600A590CB /* ExampleTableViewController.m in Sources */,
 				0768C4A220CF532F00A590CB /* TYRootViewController.m in Sources */,
+				0770659D20D10403007CEDB2 /* TYNavigationViewController.m in Sources */,
 				0768C4C620CFB4C800A590CB /* BaseViewController.m in Sources */,
 				0768C49A20CF52F000A590CB /* main.m in Sources */,
 				0768C4B420CF916300A590CB /* OtherRootViewController.m in Sources */,
 				0768C4A820CF53D500A590CB /* FPSLabel.m in Sources */,
 				0768C4B120CF915200A590CB /* AnimationRootViewController.m in Sources */,
 				0768C4C020CFAC5600A590CB /* ScrollerComponentsViewController.m in Sources */,
+				0770659A20D10190007CEDB2 /* UIViewAnimationViewController.m in Sources */,
 				0768C48C20CF52EA00A590CB /* AppDelegate.m in Sources */,
 				0768C4AE20CF914500A590CB /* MediaRootViewController.m in Sources */,
 				0768C4B820CF91F700A590CB /* HomeRootViewController.m in Sources */,

@@ -12,5 +12,13 @@
 #define TYSCREENWIDTH [UIScreen mainScreen].bounds.size.width
 #define TYSCREENHEIGHT [UIScreen mainScreen].bounds.size.height
 #define TYPadding 10
+#define NavHeight self.navigationController.navigationBar.frame.size.height
+#define StatusbarHeight  [UIApplication sharedApplication].statusBarFrame.size.height
+#import <MJRefresh.h>
+#import <YYModel.h>
+#import <AFNetworking.h>
+#import "TYNetManager.h"
+//组件viewTitle点击或者scrollerView滚动完成首次加载view后发出的通知
+#define TYComponentClickOrScrollerViewDidfinishLoadView @"TYComponentClickOrScrollerViewDidfinishLoadView"
 
 #endif /* TYSynthesisProject_pch */

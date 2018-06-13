@@ -7,31 +7,46 @@
 //
 
 #import "AnimationRootViewController.h"
-
+#import "UIViewAnimationViewController.h"
 @interface AnimationRootViewController ()
 
 @end
 
 @implementation AnimationRootViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+    NSArray *btnName = @[@"UIView动画",@"CoreAnimation",@"帧动画",@"自定义转场"];
+    CGFloat btnW = TYSCREENWIDTH * 0.6;
+    CGFloat btnH = 44;
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    for (NSInteger i = 0; i < btnName.count; i++) {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn setTitle:btnName[i] forState:UIControlStateNormal];
+        btn.frame = CGRectMake(TYSCREENWIDTH * 0.2, -100, btnW, btnH);
+        CGFloat btnY = TYSCREENHEIGHT * (i * 0.1 + 0.2);
+        
+        [btn setTitleColor:[UIColor magentaColor] forState:UIControlStateNormal];
+        btn.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        btn.titleLabel.adjustsFontSizeToFitWidth = YES;
+        btn.tag = i;
+        [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:btn];
+        
+        [UIView animateWithDuration:0.8 delay:0.5 * i usingSpringWithDamping:10 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            btn.frame = CGRectMake(TYSCREENWIDTH * 0.2, btnY, btnW, btnH);
+        } completion:nil];
+        
+        
+    }
 }
-*/
+- (void)btnAction:(UIButton *)sender{
+    if (sender.tag == 0) {
+      
+        [self.navigationController pushViewController:[UIViewAnimationViewController new] animated:YES];
+    }
+}
 
 @end
