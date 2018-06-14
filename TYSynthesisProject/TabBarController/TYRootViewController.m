@@ -7,6 +7,10 @@
 //
 
 #import "TYRootViewController.h"
+#import "HomeRootViewController.h"
+#import "MediaRootViewController.h"
+#import "AnimationRootViewController.h"
+#import "OtherRootViewController.h"
 @interface TYRootViewController ()
 @end
 
@@ -15,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.hidesBottomBarWhenPushed = YES;
+    
+    
+    
+    
 }
 
 

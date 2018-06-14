@@ -10,4 +10,6 @@
 
 @interface TYNavigationViewController : UINavigationController
 
+-(CGFloat)navHeight;
+
 @end

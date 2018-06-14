@@ -8,6 +8,7 @@
 
 #import "AnimationRootViewController.h"
 #import "UIViewAnimationViewController.h"
+#import "CoreAnimationViewController.h"
 @interface AnimationRootViewController ()
 
 @end
@@ -35,7 +36,8 @@
         [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:btn];
         
-        [UIView animateWithDuration:0.8 delay:0.5 * i usingSpringWithDamping:10 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        //usingSpringWithDamping 阻尼越接近0 弹性效果越明显
+        [UIView animateWithDuration:0.5 delay:0.5 * i usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             btn.frame = CGRectMake(TYSCREENWIDTH * 0.2, btnY, btnW, btnH);
         } completion:nil];
         
@@ -46,6 +48,8 @@
     if (sender.tag == 0) {
       
         [self.navigationController pushViewController:[UIViewAnimationViewController new] animated:YES];
+    }else if (sender.tag == 1){
+        [self.navigationController pushViewController:[CoreAnimationViewController new] animated:YES];
     }
 }
 

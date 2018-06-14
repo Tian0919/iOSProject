@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "LogViewController.h"
+#import "TYNavigationViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +17,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [[UITabBar appearance]setTintColor:[UIColor greenColor]];
+
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    
+    TYNavigationViewController *nav = [[TYNavigationViewController alloc]initWithRootViewController:vc];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

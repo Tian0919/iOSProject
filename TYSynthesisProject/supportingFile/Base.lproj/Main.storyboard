@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I1v-ga-0op">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="264" width="375" height="354"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="269" id="3Yr-Rb-xWF">
@@ -55,7 +56,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="I1v-ga-0op" firstAttribute="top" secondItem="7pg-DY-rlU" secondAttribute="top" id="4WA-BF-D5V"/>
+                            <constraint firstItem="I1v-ga-0op" firstAttribute="top" secondItem="7pg-DY-rlU" secondAttribute="top" constant="200" id="4WA-BF-D5V"/>
                             <constraint firstItem="I1v-ga-0op" firstAttribute="bottom" secondItem="7pg-DY-rlU" secondAttribute="bottom" id="CU1-tL-D3e"/>
                             <constraint firstItem="I1v-ga-0op" firstAttribute="trailing" secondItem="7pg-DY-rlU" secondAttribute="trailing" id="NeJ-fB-Hf2"/>
                             <constraint firstItem="I1v-ga-0op" firstAttribute="leading" secondItem="7pg-DY-rlU" secondAttribute="leading" id="emy-ZJ-bKS"/>
@@ -71,10 +72,55 @@
             </objects>
             <point key="canvasLocation" x="1150" y="-1464"/>
         </scene>
+        <!--Log View Controller-->
+        <scene sceneID="82k-Yf-mHf">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="lxU-sj-UZO" customClass="LogViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6CT-mC-M8e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="oLw-IZ-TiQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHG-K5-Ktg">
+                                <rect key="frame" x="37" y="380.5" width="300" height="39"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="logAction:" destination="lxU-sj-UZO" eventType="touchUpInside" id="kab-Qa-KhS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nHG-K5-Ktg" firstAttribute="width" secondItem="oLw-IZ-TiQ" secondAttribute="width" multiplier="0.8" id="08t-kA-UQB"/>
+                            <constraint firstAttribute="bottom" secondItem="oLw-IZ-TiQ" secondAttribute="bottom" id="6ex-hY-Oye"/>
+                            <constraint firstItem="nHG-K5-Ktg" firstAttribute="centerY" secondItem="oLw-IZ-TiQ" secondAttribute="centerY" multiplier="1.2" id="760-P6-cXT"/>
+                            <constraint firstItem="oLw-IZ-TiQ" firstAttribute="trailing" secondItem="cpM-JR-Vpo" secondAttribute="trailing" id="879-si-Da4"/>
+                            <constraint firstItem="nHG-K5-Ktg" firstAttribute="centerX" secondItem="oLw-IZ-TiQ" secondAttribute="centerX" id="I0s-Wq-hj2"/>
+                            <constraint firstItem="oLw-IZ-TiQ" firstAttribute="leading" secondItem="cpM-JR-Vpo" secondAttribute="leading" id="SCr-pm-nAp"/>
+                            <constraint firstItem="oLw-IZ-TiQ" firstAttribute="top" secondItem="6CT-mC-M8e" secondAttribute="top" id="qPn-dY-uMN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cpM-JR-Vpo"/>
+                    </view>
+                    <connections>
+                        <outlet property="logBtn" destination="nHG-K5-Ktg" id="V26-tm-zx7"/>
+                        <outlet property="logoImage" destination="oLw-IZ-TiQ" id="Ete-FW-Pe5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Viw-Iz-j1p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2160.8000000000002" y="-1523.3883058470765"/>
+        </scene>
         <!--TYProject-->
         <scene sceneID="oma-5k-81u">
             <objects>
-                <tabBarController hidesBottomBarWhenPushed="YES" id="knT-e5-3Ms" customClass="TYRootViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainRoot" hidesBottomBarWhenPushed="YES" id="knT-e5-3Ms" customClass="TYRootViewController" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" title="TYProject" largeTitleDisplayMode="never" id="KjQ-jX-zxx"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DGv-DO-JZ6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -177,6 +223,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Al7-yG-Ntl">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -214,6 +261,7 @@
         <image name="animation_selec" width="16" height="16"/>
         <image name="home" width="16" height="16"/>
         <image name="home_s" width="16" height="16"/>
+        <image name="logo" width="2832" height="4240"/>
         <image name="media" width="16" height="16"/>
         <image name="media_selec" width="16" height="16"/>
         <image name="other" width="16" height="16"/>

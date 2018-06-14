@@ -7,6 +7,7 @@
 //
 #import "HomeRootViewController.h"
 #import "BaseViewController.h"
+#import "autoScrollerADView.h"
 static NSString *kCellIdentifier = @"HomeCell";
 @interface HomeRootViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) UITableView *homeTabView;
@@ -20,6 +21,23 @@ static NSString *kCellIdentifier = @"HomeCell";
     [super viewDidLoad];
     _homeDataArr = @[@"列表上下联动",@"XXXX",@"XXXXX"];
     _homeTabView.tableFooterView = [UIView new];
+    
+    
+    autoScrollerADView *autoscroller = [[autoScrollerADView alloc]initWithFrame:CGRectMake(0, NavHeight + StatusbarHeight, TYSCREENWIDTH, 200)];
+    autoscroller.imageBlock = ^(NSInteger index) {
+        
+        UIAlertController *alCtr = [UIAlertController alertControllerWithTitle:@"" message:[NSString stringWithFormat:@"您点击的是第%zi张图片",index] preferredStyle:UIAlertControllerStyleAlert];
+
+        UIAlertAction *action1 = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        
+        [alCtr addAction:action1];
+        [self presentViewController:alCtr animated:YES completion:nil];
+    };
+    [self.view addSubview:autoscroller];
+    autoscroller.imageArr = @[@"0",@"1",@"2",@"3",@"4",@"5"];
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

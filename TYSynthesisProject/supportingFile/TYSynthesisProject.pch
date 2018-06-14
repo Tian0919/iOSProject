@@ -12,8 +12,10 @@
 #define TYSCREENWIDTH [UIScreen mainScreen].bounds.size.width
 #define TYSCREENHEIGHT [UIScreen mainScreen].bounds.size.height
 #define TYPadding 10
-#define NavHeight self.navigationController.navigationBar.frame.size.height
+
+#define NavHeight [TYNavigationViewController new].navHeight
 #define StatusbarHeight  [UIApplication sharedApplication].statusBarFrame.size.height
+#import "TYNavigationViewController.h"
 #import <MJRefresh.h>
 #import <YYModel.h>
 #import <AFNetworking.h>
