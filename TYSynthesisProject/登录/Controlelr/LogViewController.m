@@ -23,14 +23,15 @@ static const NSString *ItemStatusContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.barStyle = UIStatusBarStyleLightContent;
     [self.navigationController.navigationBar setHidden:YES];
- 
+   
+
     [self setUI];
-    _logBtn.enabled = NO;
-    [_logBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
 }
 - (void)setUI{
     UIImageView *nameImage = [[UIImageView alloc]initWithFrame:CGRectMake(10, 0, 20, 20)];
+
     nameImage.image = [UIImage imageNamed:@"name"];
     _nameTF = [[UITextField alloc]init];
     _nameTF.bounds = CGRectMake(0, 0, TYSCREENWIDTH * 0.8, 40);
@@ -117,18 +118,14 @@ static const NSString *ItemStatusContext;
         [_pswTF.layer addAnimation:animation forKey:@"shake"];
         _pswTF.text = @"";
     }
-    
-   
 
 }
 #pragma mark 输入框代理事件
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    
     [self.view endEditing:YES];
     return YES;
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self.view endEditing:YES];
 }
-
 @end

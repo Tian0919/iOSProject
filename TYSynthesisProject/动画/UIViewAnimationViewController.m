@@ -24,21 +24,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *tipString = @"UIView 动画可以修改的属性有：frame,bounds,center,transfor,alpha,backgroundColor,contentStretch,通过这几个UIView.beginAnimations() -> UIView.commitAnimations() 和UIView.animateWithDuration()方法 配合上面的属性已经可以做出简单的动画效果，基本可以满足日常需求";
-   
-  
-    self.textLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, TYSCREENWIDTH, -200)];
-    self.textLab.numberOfLines = 0;
-    self.textLab.text = tipString;
-    self.textLab.backgroundColor = [UIColor redColor];
-    self.textLab.textColor = [UIColor whiteColor];
-    [self.view addSubview:self.textLab];
+//    NSString *tipString = @"UIView 动画可以修改的属性有：frame,bounds,center,transfor,alpha,backgroundColor,contentStretch,通过这几个UIView.beginAnimations() -> UIView.commitAnimations() 和UIView.animateWithDuration()方法 配合上面的属性已经可以做出简单的动画效果，基本可以满足日常需求";
+//
+//
+//    self.textLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, TYSCREENWIDTH, -200)];
+//    self.textLab.numberOfLines = 0;
+//    self.textLab.text = tipString;
+//    self.textLab.backgroundColor = [UIColor redColor];
+//    self.textLab.textColor = [UIColor whiteColor];
+//    [self.view addSubview:self.textLab];
 
-    self.marks = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.marks.frame = CGRectMake(TYSCREENWIDTH-30,NavHeight + StatusbarHeight, 20, 40);
-    [self.marks setImage:[UIImage imageNamed:@"book"] forState:UIControlStateNormal];
-    [self.marks addTarget:self action:@selector(showText) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.marks];
+//    self.marks = [UIButton buttonWithType:UIButtonTypeCustom];
+//    self.marks.frame = CGRectMake(TYSCREENWIDTH-30,NavHeight + StatusbarHeight, 20, 40);
+//    [self.marks setImage:[UIImage imageNamed:@"book"] forState:UIControlStateNormal];
+//    [self.marks addTarget:self action:@selector(showText) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:self.marks];
     
     
     
@@ -56,33 +56,37 @@
     [[UIApplication sharedApplication].keyWindow addSubview:self.sideView];
     
     
+   
+    
+    
+    
     _animationView = [[UIView alloc]initWithFrame:CGRectMake(10, TYSCREENWIDTH/ 2, 100, 100)];
     _animationView.backgroundColor = [UIColor redColor];
     [self.view addSubview:_animationView];
 }
-- (void)showText{
-
-    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        
-        CGRect labFrame = self.textLab.frame;
-        labFrame.origin.y = NavHeight + StatusbarHeight;
-        labFrame.size.height = 200;
-        self.textLab.frame = labFrame;
-        
-        
-        CGRect btnFrame = self.marks.frame;
-        btnFrame.origin.y = CGRectGetMaxY(self.textLab.frame);
-        self.marks.frame = btnFrame;
-        
-        CGRect animationFrame = self.animationView.frame;
-        animationFrame.origin.y = CGRectGetMaxY(self.textLab.frame) + 50;
-        self.animationView.frame = animationFrame;
-        
-    } completion:^(BOOL finished) {
-        
-    }];
-
-}
+//- (void)showText{
+//
+//    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+//
+//        CGRect labFrame = self.textLab.frame;
+//        labFrame.origin.y = NavHeight + StatusbarHeight;
+//        labFrame.size.height = 200;
+//        self.textLab.frame = labFrame;
+//
+//
+//        CGRect btnFrame = self.marks.frame;
+//        btnFrame.origin.y = CGRectGetMaxY(self.textLab.frame);
+//        self.marks.frame = btnFrame;
+//
+//        CGRect animationFrame = self.animationView.frame;
+//        animationFrame.origin.y = CGRectGetMaxY(self.textLab.frame) + 50;
+//        self.animationView.frame = animationFrame;
+//
+//    } completion:^(BOOL finished) {
+//
+//    }];
+//
+//}
 - (void)showSide{
     
     if (!_showSide) {

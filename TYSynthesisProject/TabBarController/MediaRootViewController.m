@@ -7,7 +7,7 @@
 //
 
 #import "MediaRootViewController.h"
-
+#import "CollectionAutoScroll.h"
 @interface MediaRootViewController ()
 
 @end
@@ -16,7 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
+    layout.itemSize = CGSizeMake(TYSCREENWIDTH, 200);
+    layout.minimumLineSpacing = 0;
+    layout.minimumInteritemSpacing = 0;
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    CollectionAutoScroll *autosc = [[CollectionAutoScroll alloc]initWithFrame:CGRectMake(0, 64, TYSCREENWIDTH, 200) collectionViewLayout:layout];
+    [self.view addSubview:autosc];
 }
 
 

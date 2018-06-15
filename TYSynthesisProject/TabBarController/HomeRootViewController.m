@@ -13,6 +13,9 @@ static NSString *kCellIdentifier = @"HomeCell";
 @property (nonatomic, strong) UITableView *homeTabView;
 @property (weak, nonatomic) IBOutlet UITableView *homeTableView;
 @property (nonatomic, strong) NSArray *homeDataArr;
+@property (nonatomic, strong) UIButton *cityBtn;
+
+
 @end
 
 @implementation HomeRootViewController
@@ -37,6 +40,21 @@ static NSString *kCellIdentifier = @"HomeCell";
     };
     [self.view addSubview:autoscroller];
     autoscroller.imageArr = @[@"0",@"1",@"2",@"3",@"4",@"5"];
+    
+    
+    self.cityBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.cityBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+    [self.cityBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.cityBtn setTitle:@"未知" forState:UIControlStateNormal];
+    [self.cityBtn setImage:[UIImage imageNamed:@"arrow_down"] forState:UIControlStateNormal];
+//    [self.cityBtn setImageEdgeInsets:UIEdgeInsetsMake(0,0, 0,  -self.cityBtn.titleLabel.frame.size.width)];
+    
+    [self.cityBtn setTitleEdgeInsets:UIEdgeInsetsMake(0, -self.cityBtn.imageView.frame.size.width-10, 0, 0)];
+    
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.cityBtn];
+    
+    
     
 }
 

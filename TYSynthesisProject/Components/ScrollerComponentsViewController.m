@@ -142,7 +142,9 @@ static const CGFloat TitleHeight = 40;
 #pragma mark 标题点击事件
 - (void)labClick:(UITapGestureRecognizer *)tap{
     
-    [self.contentScrollerView scrollRectToVisible:CGRectMake(tap.view.tag * TYSCREENWIDTH, 0, TYSCREENWIDTH, self.contentScrollerView.frame.size.height) animated:NO];
+    [self contentVC:tap.view.tag];
+    
+//    [self.contentScrollerView scrollRectToVisible:CGRectMake(tap.view.tag * TYSCREENWIDTH, 0, TYSCREENWIDTH, self.contentScrollerView.frame.size.height) animated:NO];
     [self titleLabClick:tap.view.tag];
 }
 #pragma mark 选中标题显示处理

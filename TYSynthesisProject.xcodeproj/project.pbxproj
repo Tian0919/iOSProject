@@ -29,6 +29,7 @@
 		079D6E0520D24FA80088C287 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 079D6E0420D24FA80088C287 /* LogViewController.m */; };
 		079D6E0720D2520F0088C287 /* logo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 079D6E0620D2520F0088C287 /* logo.mp4 */; };
 		079D6E0F20D253700088C287 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079D6E0E20D253700088C287 /* AVFoundation.framework */; };
+		07AD4DD220D34EEB007D7132 /* CollectionAutoScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AD4DD120D34EEB007D7132 /* CollectionAutoScroll.m */; };
 		A34163987EBF185BBF4626E7 /* libPods-TYSynthesisProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 682F056BBD2465903AAF438A /* libPods-TYSynthesisProject.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,8 @@
 		079D6E0420D24FA80088C287 /* LogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
 		079D6E0620D2520F0088C287 /* logo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = logo.mp4; sourceTree = "<group>"; };
 		079D6E0E20D253700088C287 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		07AD4DD020D34EEB007D7132 /* CollectionAutoScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionAutoScroll.h; sourceTree = "<group>"; };
+		07AD4DD120D34EEB007D7132 /* CollectionAutoScroll.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionAutoScroll.m; sourceTree = "<group>"; };
 		27B021583B7C5C6700937B59 /* Pods-TYSynthesisProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYSynthesisProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TYSynthesisProject/Pods-TYSynthesisProject.debug.xcconfig"; sourceTree = "<group>"; };
 		682F056BBD2465903AAF438A /* libPods-TYSynthesisProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TYSynthesisProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		871F1EE4234A63B11083E55C /* Pods-TYSynthesisProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYSynthesisProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TYSynthesisProject/Pods-TYSynthesisProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				0768C4BF20CFAC5600A590CB /* ScrollerComponentsViewController.m */,
 				079D6DFD20D22E820088C287 /* autoScrollerADView.h */,
 				079D6DFE20D22E820088C287 /* autoScrollerADView.m */,
+				07AD4DD020D34EEB007D7132 /* CollectionAutoScroll.h */,
+				07AD4DD120D34EEB007D7132 /* CollectionAutoScroll.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 				0770656820D0AEB1007CEDB2 /* TYNetManager.m in Sources */,
 				0768C4C920CFB4D600A590CB /* ExampleTableViewController.m in Sources */,
 				0768C4A220CF532F00A590CB /* TYRootViewController.m in Sources */,
+				07AD4DD220D34EEB007D7132 /* CollectionAutoScroll.m in Sources */,
 				0770659D20D10403007CEDB2 /* TYNavigationViewController.m in Sources */,
 				0768C4C620CFB4C800A590CB /* BaseViewController.m in Sources */,
 				079D6E0520D24FA80088C287 /* LogViewController.m in Sources */,
