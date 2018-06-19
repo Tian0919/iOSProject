@@ -19,7 +19,11 @@
 #import <MJRefresh.h>
 #import <YYModel.h>
 #import <AFNetworking.h>
+#import <CoreLocation/CoreLocation.h>
 #import "TYNetManager.h"
+
+#define WeatherKey @"dd70832d6ff6488d8f8f023bfbc55276"
+
 //组件viewTitle点击或者scrollerView滚动完成首次加载view后发出的通知
 #define TYComponentClickOrScrollerViewDidfinishLoadView @"TYComponentClickOrScrollerViewDidfinishLoadView"
 

@@ -27,6 +27,7 @@
     UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
     
     TYNavigationViewController *nav = [[TYNavigationViewController alloc]initWithRootViewController:vc];
+    [[UINavigationBar appearance]setTintColor:[UIColor blackColor]];
     self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     

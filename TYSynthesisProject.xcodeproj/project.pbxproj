@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		076839D020D8A24A0080EF97 /* ShowCityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076839CF20D8A24A0080EF97 /* ShowCityListViewController.m */; };
+		076839D620D8C9400080EF97 /* ShowListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 076839D520D8C9400080EF97 /* ShowListModel.m */; };
 		0768C48C20CF52EA00A590CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768C48B20CF52EA00A590CB /* AppDelegate.m */; };
 		0768C49220CF52EA00A590CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0768C49020CF52EA00A590CB /* Main.storyboard */; };
 		0768C49420CF52F000A590CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0768C49320CF52F000A590CB /* Assets.xcassets */; };
@@ -34,6 +36,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		076839CE20D8A24A0080EF97 /* ShowCityListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowCityListViewController.h; sourceTree = "<group>"; };
+		076839CF20D8A24A0080EF97 /* ShowCityListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowCityListViewController.m; sourceTree = "<group>"; };
+		076839D420D8C9400080EF97 /* ShowListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowListModel.h; sourceTree = "<group>"; };
+		076839D520D8C9400080EF97 /* ShowListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowListModel.m; sourceTree = "<group>"; };
 		0768C48720CF52EA00A590CB /* TYSynthesisProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYSynthesisProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0768C48A20CF52EA00A590CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0768C48B20CF52EA00A590CB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -95,6 +101,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		076839CD20D8A2200080EF97 /* CityList */ = {
+			isa = PBXGroup;
+			children = (
+				076839CE20D8A24A0080EF97 /* ShowCityListViewController.h */,
+				076839CF20D8A24A0080EF97 /* ShowCityListViewController.m */,
+			);
+			path = CityList;
+			sourceTree = "<group>";
+		};
+		076839D120D8C91A0080EF97 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				076839CD20D8A2200080EF97 /* CityList */,
+				0768C4C320CFB4B100A590CB /* 联动 */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		076839D320D8C92E0080EF97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				076839D420D8C9400080EF97 /* ShowListModel.h */,
+				076839D520D8C9400080EF97 /* ShowListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0768C47E20CF52EA00A590CB = {
 			isa = PBXGroup;
 			children = (
@@ -197,7 +230,8 @@
 		0768C4C220CFB4A100A590CB /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
-				0768C4C320CFB4B100A590CB /* 联动 */,
+				076839D320D8C92E0080EF97 /* Model */,
+				076839D120D8C91A0080EF97 /* controller */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -387,6 +421,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076839D620D8C9400080EF97 /* ShowListModel.m in Sources */,
 				0770656820D0AEB1007CEDB2 /* TYNetManager.m in Sources */,
 				0768C4C920CFB4D600A590CB /* ExampleTableViewController.m in Sources */,
 				0768C4A220CF532F00A590CB /* TYRootViewController.m in Sources */,
@@ -400,6 +435,7 @@
 				0768C4A820CF53D500A590CB /* FPSLabel.m in Sources */,
 				0768C4B120CF915200A590CB /* AnimationRootViewController.m in Sources */,
 				0768C4C020CFAC5600A590CB /* ScrollerComponentsViewController.m in Sources */,
+				076839D020D8A24A0080EF97 /* ShowCityListViewController.m in Sources */,
 				0770659A20D10190007CEDB2 /* UIViewAnimationViewController.m in Sources */,
 				0768C48C20CF52EA00A590CB /* AppDelegate.m in Sources */,
 				0768C4AE20CF914500A590CB /* MediaRootViewController.m in Sources */,
