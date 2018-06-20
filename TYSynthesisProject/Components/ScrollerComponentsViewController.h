@@ -30,4 +30,16 @@
  */
 @property (nonatomic, assign) NSInteger selectedIndex;
 
+
+/**
+ 是否隐藏导航栏(默认隐藏)
+ */
+@property (nonatomic, getter=isHideenNavBar) BOOL HideenNavBar;
+
+
+/**
+ 展示更多(默认NO)
+ */
+@property (nonatomic, getter=isShowMore) BOOL ShowMore;
+
 @end

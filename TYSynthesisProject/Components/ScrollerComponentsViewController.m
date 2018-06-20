@@ -7,7 +7,8 @@
 //
 
 #import "ScrollerComponentsViewController.h"
-
+#import "ShowAllTitleViewController.h"
+#import "ExampleTableViewController.h"
 static const CGFloat TitleHeight = 40;
 @interface ScrollerComponentsViewController ()<UIScrollViewDelegate>
 
@@ -17,6 +18,7 @@ static const CGFloat TitleHeight = 40;
 @property (nonatomic, assign) CGFloat totlaTitleWidth;
 @property (nonatomic, strong) UILabel *selectedLab;
 @property (nonatomic, strong) UIView *underLine;
+@property (nonatomic, strong) UIButton *moreBtn;
 @end
 
 @implementation ScrollerComponentsViewController
@@ -46,7 +48,8 @@ static const CGFloat TitleHeight = 40;
 - (UIScrollView *)titleScrollerView{
   
     if (!_titleScrollerView) {
-        _titleScrollerView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, NavHeight + StatusbarHeight, TYSCREENWIDTH, TitleHeight)];
+        
+        _titleScrollerView = [[UIScrollView alloc]initWithFrame:CGRectZero];
         _titleScrollerView.backgroundColor = [UIColor whiteColor];
         _titleScrollerView.showsVerticalScrollIndicator = NO;
         _titleScrollerView.showsHorizontalScrollIndicator = NO;
@@ -54,6 +57,7 @@ static const CGFloat TitleHeight = 40;
         if (@available(iOS 11.0, *)) {
             _titleScrollerView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
+      
         [self.view addSubview:_titleScrollerView];
     }
     return  _titleScrollerView;
@@ -61,7 +65,8 @@ static const CGFloat TitleHeight = 40;
 - (UIScrollView *)contentScrollerView{
     
     if (!_contentScrollerView) {
-        _contentScrollerView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.titleScrollerView.frame), TYSCREENWIDTH, TYSCREENHEIGHT -TitleHeight - StatusbarHeight - NavHeight)];
+       
+        _contentScrollerView = [[UIScrollView alloc]init];
         _contentScrollerView.delegate = self;
         _contentScrollerView.showsHorizontalScrollIndicator = NO;
         _contentScrollerView.showsVerticalScrollIndicator = NO;
@@ -72,15 +77,60 @@ static const CGFloat TitleHeight = 40;
     }
     return _contentScrollerView;
 }
+- (UIButton *)moreBtn{
+    
+    if (!_moreBtn) {
+        _moreBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_moreBtn setImage:[UIImage imageNamed:@"more"] forState:UIControlStateNormal];
+        _moreBtn.frame = CGRectMake(TYSCREENWIDTH - 40, self.isHideenNavBar ?  StatusbarHeight + 5 : StatusbarHeight + NavHeight + 5, 30, 30);
+        [_moreBtn addTarget:self action:@selector(showMoreAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _moreBtn;
+}
+- (void)showMoreAction:(UIButton *)sender{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"ShowAll"];
+    [self presentViewController:vc animated:YES completion:^{
+        
+    }];
+    NSLog(@"Show ALl Title");
+}
 #pragma mark view生命周期
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    if (self.HideenNavBar) {
+         [self.navigationController setNavigationBarHidden:YES animated:NO];
+    }
+    if (self.ShowMore) {
+        [self.view addSubview:self.moreBtn];
+        [self.view insertSubview:self.moreBtn aboveSubview:self.titleScrollerView];
+    }
     self.view.backgroundColor = [UIColor whiteColor];
+   
+  
+}
+- (void)viewDidLayoutSubviews{
+    [super viewDidLayoutSubviews];
+    CGRect titleFrame;
+    if (self.HideenNavBar) {
+        titleFrame = CGRectMake(0, 0, TYSCREENWIDTH - 50, NavHeight + StatusbarHeight);
+    }else{
+        titleFrame = CGRectMake(0, StatusbarHeight + NavHeight, TYSCREENWIDTH - 50, TitleHeight);
+    }
+    self.titleScrollerView.frame = titleFrame;
+    
+    CGRect contentFrame;
+    if (self.HideenNavBar) {
+        contentFrame = CGRectMake(0, CGRectGetMaxY(self.titleScrollerView.frame), TYSCREENWIDTH, TYSCREENHEIGHT - StatusbarHeight - NavHeight);
+    }else{
+        contentFrame = CGRectMake(0, CGRectGetMaxY(self.titleScrollerView.frame), TYSCREENWIDTH, TYSCREENHEIGHT - StatusbarHeight - NavHeight - TitleHeight);
+    }
+    self.contentScrollerView.frame = contentFrame;
+    
     [self cacluateWidths];
     [self AllTitles];
-    
     [self contentVC:self.selectedIndex];
-    
 }
 #pragma mark 设置顶部滚动标题
 - (void)AllTitles{
@@ -98,6 +148,9 @@ static const CGFloat TitleHeight = 40;
         lab.userInteractionEnabled = YES;
         lab.tag = i;
         lab.textColor = self.normalColor;
+        
+        
+        
         
         if (_totlaTitleWidth < TYSCREENWIDTH) {
             labW = TYSCREENWIDTH / self.childViewControllers.count;
@@ -117,9 +170,9 @@ static const CGFloat TitleHeight = 40;
         }
         
         
-        [self.titleScrollerView addSubview:lab];
+        [_titleScrollerView addSubview:lab];
         if (self.ShowUnderLine) {
-            [self.titleScrollerView addSubview:_underLine];
+            [_titleScrollerView addSubview:_underLine];
         }
         self.titleScrollerView.contentSize = CGSizeMake(CGRectGetMaxX(lab.frame), 0);
         
@@ -169,12 +222,12 @@ static const CGFloat TitleHeight = 40;
 #pragma mark 设置顶部title居中显示
 - (void)setTitleScrollertoCenter:(UILabel *)lab{
     
-    CGFloat offset = lab.center.x - TYSCREENWIDTH * 0.5;
+    CGFloat offset = lab.center.x - self.titleScrollerView.frame.size.width * 0.5;
     if (offset <= 0) {
         offset = 0;
     }
     
-    CGFloat maxOffset = self.titleScrollerView.contentSize.width - TYSCREENWIDTH;
+    CGFloat maxOffset = self.titleScrollerView.contentSize.width - self.titleScrollerView.frame.size.width;
     
     if (offset > maxOffset) {
         offset = maxOffset;
@@ -208,7 +261,7 @@ static const CGFloat TitleHeight = 40;
 }
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     
-    NSInteger index = scrollView.contentOffset.x /  TYSCREENWIDTH;
+    NSInteger index = scrollView.contentOffset.x /  self.titleScrollerView.frame.size.width;
     UILabel *lab = self.titleScrollerView.subviews[index];
     [self setTitleScrollertoCenter:lab];
     

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		076839D020D8A24A0080EF97 /* ShowCityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076839CF20D8A24A0080EF97 /* ShowCityListViewController.m */; };
 		076839D620D8C9400080EF97 /* ShowListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 076839D520D8C9400080EF97 /* ShowListModel.m */; };
+		076839D920D9E85D0080EF97 /* ChannelListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 076839D820D9E85D0080EF97 /* ChannelListModel.m */; };
+		076839DC20DA19F00080EF97 /* ShowAllTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076839DB20DA19F00080EF97 /* ShowAllTitleViewController.m */; };
+		076839DF20DA22110080EF97 /* ShowCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 076839DE20DA22110080EF97 /* ShowCollectionViewCell.m */; };
+		076839E220DA27BA0080EF97 /* ShowCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 076839E120DA27BA0080EF97 /* ShowCollectionReusableView.m */; };
 		0768C48C20CF52EA00A590CB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0768C48B20CF52EA00A590CB /* AppDelegate.m */; };
 		0768C49220CF52EA00A590CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0768C49020CF52EA00A590CB /* Main.storyboard */; };
 		0768C49420CF52F000A590CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0768C49320CF52F000A590CB /* Assets.xcassets */; };
@@ -40,6 +44,14 @@
 		076839CF20D8A24A0080EF97 /* ShowCityListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowCityListViewController.m; sourceTree = "<group>"; };
 		076839D420D8C9400080EF97 /* ShowListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowListModel.h; sourceTree = "<group>"; };
 		076839D520D8C9400080EF97 /* ShowListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowListModel.m; sourceTree = "<group>"; };
+		076839D720D9E85D0080EF97 /* ChannelListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChannelListModel.h; sourceTree = "<group>"; };
+		076839D820D9E85D0080EF97 /* ChannelListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChannelListModel.m; sourceTree = "<group>"; };
+		076839DA20DA19F00080EF97 /* ShowAllTitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowAllTitleViewController.h; sourceTree = "<group>"; };
+		076839DB20DA19F00080EF97 /* ShowAllTitleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowAllTitleViewController.m; sourceTree = "<group>"; };
+		076839DD20DA22110080EF97 /* ShowCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowCollectionViewCell.h; sourceTree = "<group>"; };
+		076839DE20DA22110080EF97 /* ShowCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowCollectionViewCell.m; sourceTree = "<group>"; };
+		076839E020DA27BA0080EF97 /* ShowCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowCollectionReusableView.h; sourceTree = "<group>"; };
+		076839E120DA27BA0080EF97 /* ShowCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowCollectionReusableView.m; sourceTree = "<group>"; };
 		0768C48720CF52EA00A590CB /* TYSynthesisProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TYSynthesisProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0768C48A20CF52EA00A590CB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		0768C48B20CF52EA00A590CB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -124,6 +136,8 @@
 			children = (
 				076839D420D8C9400080EF97 /* ShowListModel.h */,
 				076839D520D8C9400080EF97 /* ShowListModel.m */,
+				076839D720D9E85D0080EF97 /* ChannelListModel.h */,
+				076839D820D9E85D0080EF97 /* ChannelListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -223,6 +237,12 @@
 				079D6DFE20D22E820088C287 /* autoScrollerADView.m */,
 				07AD4DD020D34EEB007D7132 /* CollectionAutoScroll.h */,
 				07AD4DD120D34EEB007D7132 /* CollectionAutoScroll.m */,
+				076839DA20DA19F00080EF97 /* ShowAllTitleViewController.h */,
+				076839DB20DA19F00080EF97 /* ShowAllTitleViewController.m */,
+				076839DD20DA22110080EF97 /* ShowCollectionViewCell.h */,
+				076839DE20DA22110080EF97 /* ShowCollectionViewCell.m */,
+				076839E020DA27BA0080EF97 /* ShowCollectionReusableView.h */,
+				076839E120DA27BA0080EF97 /* ShowCollectionReusableView.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -424,16 +444,20 @@
 				076839D620D8C9400080EF97 /* ShowListModel.m in Sources */,
 				0770656820D0AEB1007CEDB2 /* TYNetManager.m in Sources */,
 				0768C4C920CFB4D600A590CB /* ExampleTableViewController.m in Sources */,
+				076839D920D9E85D0080EF97 /* ChannelListModel.m in Sources */,
 				0768C4A220CF532F00A590CB /* TYRootViewController.m in Sources */,
 				07AD4DD220D34EEB007D7132 /* CollectionAutoScroll.m in Sources */,
 				0770659D20D10403007CEDB2 /* TYNavigationViewController.m in Sources */,
 				0768C4C620CFB4C800A590CB /* BaseViewController.m in Sources */,
 				079D6E0520D24FA80088C287 /* LogViewController.m in Sources */,
 				0768C49A20CF52F000A590CB /* main.m in Sources */,
+				076839E220DA27BA0080EF97 /* ShowCollectionReusableView.m in Sources */,
 				0768C4B420CF916300A590CB /* OtherRootViewController.m in Sources */,
 				079D6DFC20D202B60088C287 /* CoreAnimationViewController.m in Sources */,
 				0768C4A820CF53D500A590CB /* FPSLabel.m in Sources */,
+				076839DF20DA22110080EF97 /* ShowCollectionViewCell.m in Sources */,
 				0768C4B120CF915200A590CB /* AnimationRootViewController.m in Sources */,
+				076839DC20DA19F00080EF97 /* ShowAllTitleViewController.m in Sources */,
 				0768C4C020CFAC5600A590CB /* ScrollerComponentsViewController.m in Sources */,
 				076839D020D8A24A0080EF97 /* ShowCityListViewController.m in Sources */,
 				0770659A20D10190007CEDB2 /* UIViewAnimationViewController.m in Sources */,
