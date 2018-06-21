@@ -88,9 +88,20 @@
     _dragcell.center = point;
     _targetIndexPath = [self getDragIndexpathWithPoint:point];
     
-    if ((_targetIndexPath && _dragIndexPath) && (_targetIndexPath.section == _dragIndexPath.section)) {
+    if (_targetIndexPath && _dragIndexPath)  {
+
+//        ChannelListModel *drawModel = _sectionArr[_dragIndexPath.section];
+//        ChannelListModel *targetModel = _sectionArr[_targetIndexPath.section];
+//
+//        NSDictionary *drawdic = drawModel.channelList[_dragIndexPath.item];
+//        [targetModel.channelList addObject:drawdic];
+//        [drawModel.channelList removeObject:drawdic];
+
+        
+        
+
         [self.showCollectionView moveItemAtIndexPath:_dragIndexPath toIndexPath:_targetIndexPath];
-       
+        [self.showCollectionView reloadData];
         _dragIndexPath = _targetIndexPath;
     }
 
@@ -98,15 +109,15 @@
 }
 - (void)drawEnd:(UILongPressGestureRecognizer *)press{
     if(!_dragcell)return;
-    
+
     CGRect endFrame = [self.showCollectionView cellForItemAtIndexPath:_dragIndexPath].frame;
      ShowCollectionViewCell *cell = (ShowCollectionViewCell *)[self.showCollectionView cellForItemAtIndexPath:_dragIndexPath];
-    
+
     [UIView animateWithDuration:0.3 animations:^{
         [cell setTransform:CGAffineTransformMakeScale(1.0, 1.0)];
        cell.frame = endFrame;
     }completion:^(BOOL finished) {
-       
+
     }];
 }
 //获取到当前cellindexPath

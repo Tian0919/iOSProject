@@ -41,5 +41,6 @@ typedef void(^adImageClickBlock)(NSInteger index);
  图片点击回掉
  */
 @property (nonatomic, copy) adImageClickBlock imageBlock;
-
+- (void)startTimer;
+- (void)invalidateTimer;
 @end

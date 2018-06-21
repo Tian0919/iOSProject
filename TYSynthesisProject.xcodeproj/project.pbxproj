@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07175E1020DB330900D4A6B4 /* TCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07175E0F20DB330900D4A6B4 /* TCollectionViewController.m */; };
+		07175E1220DB3AB900D4A6B4 /* Section.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07175E1120DB3AB900D4A6B4 /* Section.plist */; };
 		076839D020D8A24A0080EF97 /* ShowCityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 076839CF20D8A24A0080EF97 /* ShowCityListViewController.m */; };
 		076839D620D8C9400080EF97 /* ShowListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 076839D520D8C9400080EF97 /* ShowListModel.m */; };
 		076839D920D9E85D0080EF97 /* ChannelListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 076839D820D9E85D0080EF97 /* ChannelListModel.m */; };
@@ -36,10 +38,15 @@
 		079D6E0720D2520F0088C287 /* logo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 079D6E0620D2520F0088C287 /* logo.mp4 */; };
 		079D6E0F20D253700088C287 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079D6E0E20D253700088C287 /* AVFoundation.framework */; };
 		07AD4DD220D34EEB007D7132 /* CollectionAutoScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AD4DD120D34EEB007D7132 /* CollectionAutoScroll.m */; };
+		07D88C7A20DB6B3800F06D97 /* TYFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D88C7920DB6B3800F06D97 /* TYFlowLayout.m */; };
+		07D88C7D20DB8EBE00F06D97 /* TYLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D88C7C20DB8EBE00F06D97 /* TYLayout.m */; };
 		A34163987EBF185BBF4626E7 /* libPods-TYSynthesisProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 682F056BBD2465903AAF438A /* libPods-TYSynthesisProject.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07175E0E20DB330900D4A6B4 /* TCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TCollectionViewController.h; sourceTree = "<group>"; };
+		07175E0F20DB330900D4A6B4 /* TCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TCollectionViewController.m; sourceTree = "<group>"; };
+		07175E1120DB3AB900D4A6B4 /* Section.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Section.plist; sourceTree = "<group>"; };
 		076839CE20D8A24A0080EF97 /* ShowCityListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowCityListViewController.h; sourceTree = "<group>"; };
 		076839CF20D8A24A0080EF97 /* ShowCityListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowCityListViewController.m; sourceTree = "<group>"; };
 		076839D420D8C9400080EF97 /* ShowListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowListModel.h; sourceTree = "<group>"; };
@@ -95,6 +102,10 @@
 		079D6E0E20D253700088C287 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		07AD4DD020D34EEB007D7132 /* CollectionAutoScroll.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionAutoScroll.h; sourceTree = "<group>"; };
 		07AD4DD120D34EEB007D7132 /* CollectionAutoScroll.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionAutoScroll.m; sourceTree = "<group>"; };
+		07D88C7820DB6B3800F06D97 /* TYFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYFlowLayout.h; sourceTree = "<group>"; };
+		07D88C7920DB6B3800F06D97 /* TYFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYFlowLayout.m; sourceTree = "<group>"; };
+		07D88C7B20DB8EBE00F06D97 /* TYLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYLayout.h; sourceTree = "<group>"; };
+		07D88C7C20DB8EBE00F06D97 /* TYLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYLayout.m; sourceTree = "<group>"; };
 		27B021583B7C5C6700937B59 /* Pods-TYSynthesisProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYSynthesisProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TYSynthesisProject/Pods-TYSynthesisProject.debug.xcconfig"; sourceTree = "<group>"; };
 		682F056BBD2465903AAF438A /* libPods-TYSynthesisProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TYSynthesisProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		871F1EE4234A63B11083E55C /* Pods-TYSynthesisProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TYSynthesisProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TYSynthesisProject/Pods-TYSynthesisProject.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,6 +124,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07175E0D20DB32DF00D4A6B4 /* collection */ = {
+			isa = PBXGroup;
+			children = (
+				07175E0E20DB330900D4A6B4 /* TCollectionViewController.h */,
+				07175E0F20DB330900D4A6B4 /* TCollectionViewController.m */,
+			);
+			path = collection;
+			sourceTree = "<group>";
+		};
 		076839CD20D8A2200080EF97 /* CityList */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +145,7 @@
 		076839D120D8C91A0080EF97 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				07175E0D20DB32DF00D4A6B4 /* collection */,
 				076839CD20D8A2200080EF97 /* CityList */,
 				0768C4C320CFB4B100A590CB /* 联动 */,
 			);
@@ -187,6 +208,7 @@
 				0768C49520CF52F000A590CB /* LaunchScreen.storyboard */,
 				0768C49920CF52F000A590CB /* main.m */,
 				0768C4B920CF948500A590CB /* TYSynthesisProject.pch */,
+				07175E1120DB3AB900D4A6B4 /* Section.plist */,
 			);
 			path = supportingFile;
 			sourceTree = "<group>";
@@ -207,6 +229,10 @@
 				0770656720D0AEB1007CEDB2 /* TYNetManager.m */,
 				0770659B20D10403007CEDB2 /* TYNavigationViewController.h */,
 				0770659C20D10403007CEDB2 /* TYNavigationViewController.m */,
+				07D88C7820DB6B3800F06D97 /* TYFlowLayout.h */,
+				07D88C7920DB6B3800F06D97 /* TYFlowLayout.m */,
+				07D88C7B20DB8EBE00F06D97 /* TYLayout.h */,
+				07D88C7C20DB8EBE00F06D97 /* TYLayout.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -373,6 +399,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07175E1220DB3AB900D4A6B4 /* Section.plist in Resources */,
 				0768C49720CF52F000A590CB /* LaunchScreen.storyboard in Resources */,
 				079D6E0720D2520F0088C287 /* logo.mp4 in Resources */,
 				0768C49420CF52F000A590CB /* Assets.xcassets in Resources */,
@@ -445,12 +472,14 @@
 				0770656820D0AEB1007CEDB2 /* TYNetManager.m in Sources */,
 				0768C4C920CFB4D600A590CB /* ExampleTableViewController.m in Sources */,
 				076839D920D9E85D0080EF97 /* ChannelListModel.m in Sources */,
+				07175E1020DB330900D4A6B4 /* TCollectionViewController.m in Sources */,
 				0768C4A220CF532F00A590CB /* TYRootViewController.m in Sources */,
 				07AD4DD220D34EEB007D7132 /* CollectionAutoScroll.m in Sources */,
 				0770659D20D10403007CEDB2 /* TYNavigationViewController.m in Sources */,
 				0768C4C620CFB4C800A590CB /* BaseViewController.m in Sources */,
 				079D6E0520D24FA80088C287 /* LogViewController.m in Sources */,
 				0768C49A20CF52F000A590CB /* main.m in Sources */,
+				07D88C7D20DB8EBE00F06D97 /* TYLayout.m in Sources */,
 				076839E220DA27BA0080EF97 /* ShowCollectionReusableView.m in Sources */,
 				0768C4B420CF916300A590CB /* OtherRootViewController.m in Sources */,
 				079D6DFC20D202B60088C287 /* CoreAnimationViewController.m in Sources */,
@@ -458,6 +487,7 @@
 				076839DF20DA22110080EF97 /* ShowCollectionViewCell.m in Sources */,
 				0768C4B120CF915200A590CB /* AnimationRootViewController.m in Sources */,
 				076839DC20DA19F00080EF97 /* ShowAllTitleViewController.m in Sources */,
+				07D88C7A20DB6B3800F06D97 /* TYFlowLayout.m in Sources */,
 				0768C4C020CFAC5600A590CB /* ScrollerComponentsViewController.m in Sources */,
 				076839D020D8A24A0080EF97 /* ShowCityListViewController.m in Sources */,
 				0770659A20D10190007CEDB2 /* UIViewAnimationViewController.m in Sources */,

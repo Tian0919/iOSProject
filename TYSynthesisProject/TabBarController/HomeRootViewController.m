@@ -10,6 +10,7 @@
 #import "autoScrollerADView.h"
 #import "ShowCityListViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "TCollectionViewController.h"
 static NSString *kCellIdentifier = @"HomeCell";
 @interface HomeRootViewController ()<UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate>
 @property (nonatomic, strong) UITableView *homeTabView;
@@ -17,19 +18,12 @@ static NSString *kCellIdentifier = @"HomeCell";
 @property (nonatomic, strong) NSArray *homeDataArr;
 @property (nonatomic, strong) UIButton *cityBtn;
 @property (nonatomic, strong) CLLocationManager *locationManager;
-
+@property (nonatomic, strong) NSTimer *hhh;
+@property (nonatomic, strong) autoScrollerADView *autoSroller;
 
 @end
 
 @implementation HomeRootViewController
-- (void)viewWillAppear:(BOOL)animated{
-    
-    [super viewWillAppear:animated];
-   
-    
-    
-    
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,11 +40,12 @@ static NSString *kCellIdentifier = @"HomeCell";
     };
     [_locationManager startUpdatingLocation];
     
-    _homeDataArr = @[@"列表上下联动",@"XXXX",@"XXXXX"];
+    _homeDataArr = @[@"列表上下联动",@"CollectionView",@"XXXXX"];
     _homeTabView.tableFooterView = [UIView new];
     
     
     autoScrollerADView *autoscroller = [[autoScrollerADView alloc]initWithFrame:CGRectMake(0, NavHeight + StatusbarHeight, TYSCREENWIDTH, 200)];
+    _autoSroller = autoscroller;
     autoscroller.imageBlock = ^(NSInteger index) {
         
         UIAlertController *alCtr = [UIAlertController alertControllerWithTitle:@"" message:[NSString stringWithFormat:@"您点击的是第%zi张图片",index] preferredStyle:UIAlertControllerStyleAlert];
@@ -108,9 +103,24 @@ static NSString *kCellIdentifier = @"HomeCell";
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    BaseViewController *baseVC = [BaseViewController new];
-    baseVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:baseVC animated:YES];
+    switch (indexPath.row) {
+        case 0:
+            {
+                BaseViewController *baseVC = [BaseViewController new];
+                baseVC.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:baseVC animated:YES];
+            }
+            break;
+        case 1:
+        {
+            TCollectionViewController *vc = [TCollectionViewController new];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            
+        default:
+            break;
+    }
+   
 }
 #pragma mark 获取位置信息
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(nonnull NSArray<CLLocation *> *)locations{
@@ -126,5 +136,15 @@ static NSString *kCellIdentifier = @"HomeCell";
     }];
     [_locationManager stopUpdatingLocation];
     NSLog(@"%@",location);
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear: animated];
+    [_autoSroller invalidateTimer];
+    
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [_autoSroller startTimer];
 }
 @end

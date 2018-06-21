@@ -24,6 +24,8 @@
 
 @property (nonatomic, strong) UIPageControl *pageControl;
 
+@property (nonatomic, assign) NSInteger timeCount;
+
 @end
 
 
@@ -71,19 +73,24 @@
 }
 #pragma mark 生成定时器
 - (void)startTimer{
+    //
+    [self invalidateTimer];
     _timer = [NSTimer scheduledTimerWithTimeInterval:self.scrollerTimeInterval target:self selector:@selector(timeAction) userInfo:nil repeats:YES];
 
     [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
 }
 #pragma mark 定时器事件
 - (void)timeAction{
-    
+    _timeCount ++;
+    NSLog(@"定时器+++++++++++++++++++定时器--_%zi",_timeCount);
     [self.contentScrollerView scrollRectToVisible:CGRectMake(2 * TYSCREENWIDTH, 0, TYSCREENWIDTH,  self.frame.size.height) animated:YES];
 }
 #pragma mark 销毁定时器
 - (void)invalidateTimer{
     [_timer invalidate];
     _timer = nil;
+    _timeCount = 0;
+    NSLog(@"定时起再见**#&*&*&*&&*&*");
 }
 #pragma mark 界面初始化
 - (void)setUI{
@@ -124,7 +131,6 @@
 }
 #pragma mark imageView点击事件
 - (void)imageClick:(UITapGestureRecognizer *)tap{
-
     if (self.imageBlock) {
         self.imageBlock(_scrollerCount % _imageArr.count);
     }
@@ -169,4 +175,5 @@
     _pageControl.currentPage = _scrollerCount % _imageArr.count;
     _contentScrollerView.contentOffset = CGPointMake(TYSCREENWIDTH, 0);
 }
+
 @end
